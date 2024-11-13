@@ -1,0 +1,33 @@
+
+    def get_sum(self):
+        # Return the sum of numbers
+        return self.total_sum
+
+    def average(self):
+        # Return the average of the numbers, or 0 if no numbers were added
+        if self.numbers == 0:
+            return 0
+        return self.total_sum / self.numbers
+
+# Main program for user input
+stats = NumberStats()
+
+print("Please type in integer numbers:")
+
+while True:
+    # Ask the user for an integer input
+    try:
+        user_input = int(input())  # This will convert the input to an integer
+    except ValueError:
+        print("Please enter a valid integer.")
+        continue  # Skip the rest of the loop and ask for input again
+
+    if user_input == -1:
+        break  # Exit the loop if the user enters -1
+    
+    # Add the valid number to the stats object
+    stats.add_number(user_input)
+
+# After loop ends, print the sum and mean of the numbers
+print("Sum of numbers:", stats.get_sum())
+print("Mean of numbers:", stats.average())
