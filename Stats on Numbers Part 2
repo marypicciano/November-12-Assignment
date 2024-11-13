@@ -1,0 +1,40 @@
+class NumberStats:
+    def __init__(self):
+        # Initialize the count of numbers, sum of numbers, and total sum
+        self.numbers = 0
+        self.total_sum = 0
+
+    def add_number(self, number: int):
+        # Increase the count of numbers by 1 and add the number to the total sum
+        self.numbers += 1
+        self.total_sum += number
+
+    def count_numbers(self):
+        # Return the total count of numbers added
+        return self.numbers
+
+    def get_sum(self):
+        # Return the sum of numbers
+        return self.total_sum
+
+    def average(self):
+        # Return the average of the numbers, or 0 if no numbers were added
+        if self.numbers == 0:
+            return 0
+        return self.total_sum / self.numbers
+
+# Example usage
+stats = NumberStats()
+stats.add_number(3)
+stats.add_number(5)
+stats.add_number(1)
+stats.add_number(2)
+
+# Print the count of numbers added
+print("Numbers added:", stats.count_numbers())
+
+# Print the sum of numbers
+print("Sum of numbers:", stats.get_sum())
+
+# Print the mean (average) of numbers
+print("Mean of numbers:", stats.average())
