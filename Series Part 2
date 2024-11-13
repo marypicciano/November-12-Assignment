@@ -1,0 +1,35 @@
+class Series:
+    def __init__(self, title, seasons, genres):
+        """Initialize the series with the title, number of seasons, and genres."""
+        self.title = title
+        self.seasons = seasons
+        self.genres = genres
+        self.ratings = []  # Initialize an empty list to store ratings
+
+    def rate(self, rating: int):
+        """Add a rating between 0 and 5 to the series."""
+        if 0 <= rating <= 5:
+            self.ratings.append(rating)
+        else:
+            print("Invalid rating. Rating should be between 0 and 5.")
+
+    def __str__(self):
+        """Return a string representation of the series."""
+        genre_string = ", ".join(self.genres)  # Join genres with a comma and a space
+        
+        if self.ratings:
+            num_ratings = len(self.ratings)
+            average_rating = sum(self.ratings) / num_ratings
+            return f"{self.title} ({self.seasons} seasons)\ngenres: {genre_string}\n{num_ratings} ratings, average {average_rating:.1f} points"
+        else:
+            return f"{self.title} ({self.seasons} seasons)\ngenres: {genre_string}\nno ratings"
+
+# Usage example:
+dexter = Series("Dexter", 8, ["Crime", "Drama", "Mystery", "Thriller"])
+dexter.rate(4)
+dexter.rate(5)
+dexter.rate(5)
+dexter.rate(3)
+dexter.rate(0)
+
+print(dexter)
