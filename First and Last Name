@@ -1,0 +1,22 @@
+class Person:
+    def __init__(self, name: str):
+        # Store the full name
+        self.name = name
+
+    def return_first_name(self):
+        # Return the first name by splitting the name and getting the first part
+        return self.name.split()[0]
+
+    def return_last_name(self):
+        # Return the last name by splitting the name and getting the second part
+        return self.name.split()[1]
+
+# Example usage
+if __name__ == "__main__":
+    mary = Person("Mary Smith")
+    print(mary.return_first_name()) 
+    print(mary.return_last_name())  
+
+    bob = Person("Bob Jones")
+    print(bob.return_first_name()) 
+    print(bob.return_last_name())  
