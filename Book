@@ -1,0 +1,16 @@
+class Book:
+    def __init__(self, name, author, genre, year):
+        # Initialize the attributes with the given values
+        self.name = name
+        self.author = author
+        self.genre = genre
+        self.year = year
+
+# Create Book objects
+python = Book("Fluent Python", "Luciano Ramalho", "programming", 2015)
+everest = Book("High Adventure", "Edmund Hillary", "autobiography", 1956)
+
+# Print the information
+print(f"{python.author}: {python.name} ({python.year})")
+print(f"The genre of the book {everest.name} is {everest.genre}")
+
