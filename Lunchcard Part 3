@@ -1,0 +1,45 @@
+class LunchCard:
+    def __init__(self, balance: float):
+        """Initialize the card with a given balance."""
+        self.balance = balance
+
+    def __str__(self):
+        """Return a string representation of the card balance with one decimal place."""
+        return f"The balance is {self.balance:.1f} euros"
+
+    def eat_lunch(self):
+        """Subtract 2.60 euros from the balance if the balance allows it."""
+        if self.balance >= 2.60:
+            self.balance -= 2.60
+
+    def eat_special(self):
+        """Subtract 4.60 euros from the balance if the balance allows it."""
+        if self.balance >= 4.60:
+            self.balance -= 4.60
+#Example usage
+
+# Create a LunchCard with an initial balance of 50 euros
+card = LunchCard(50)
+
+# Print the initial balance
+print(card)  # Output: The balance is 50.0 euros
+
+# Eat a regular lunch
+card.eat_lunch()
+print(card)  # Output: The balance is 47.4 euros
+
+# Eat a special lunch
+card.eat_special()
+print(card)  # Output: The balance is 40.2 euros
+
+# Try eating a regular lunch when the balance is low
+card = LunchCard(4)
+print(card)  # Output: The balance is 4.0 euros
+
+# Eat a regular lunch (should succeed)
+card.eat_lunch()
+print(card)  # Output: The balance is 1.4 euros
+
+# Try eating a regular lunch again (should not subtract, balance is too low)
+card.eat_lunch()
+print(card)  # Output: The balance is 1.4 euros
