@@ -1,0 +1,35 @@
+class DecreasingCounter:
+    def __init__(self, initial_value: int):
+        # Store the initial value to be able to reset it later
+        self.initial_value = initial_value
+        # Set the current value to the initial value
+        self.value = initial_value
+
+    def print_value(self):
+        # Print the current value of the counter
+        print("value:", self.value)
+
+    def decrease(self):
+        # Decrease the value, but don't let it go below 0
+        if self.value > 0:
+            self.value -= 1
+        else:
+            print("Setting the value to zero")
+
+    def set_to_zero(self):
+        # Set the counter's value to zero
+        self.value = 0
+        print("Resetting the counter")
+
+    def reset_original_value(self):
+        # Reset the counter to its initial value
+        self.value = self.initial_value
+
+counter = DecreasingCounter(55)
+counter.decrease()
+counter.decrease()
+counter.decrease()
+counter.decrease()
+counter.print_value()
+counter.reset_original_value()
+counter.print_value()
