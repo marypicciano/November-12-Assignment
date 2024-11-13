@@ -1,0 +1,56 @@
+# Assuming the NumberStats class from previous parts is already defined
+
+class NumberStats:
+    def __init__(self):
+        self.numbers = 0
+        self.total_sum = 0
+
+    def add_number(self, number: int):
+        self.numbers += 1
+        self.total_sum += number
+
+    def count_numbers(self):
+        return self.numbers
+
+    def get_sum(self):
+        return self.total_sum
+
+    def average(self):
+        if self.numbers == 0:
+            return 0
+        return self.total_sum / self.numbers
+
+
+# Main program for user input
+stats_all = NumberStats()  # Keeps track of all numbers
+stats_even = NumberStats()  # Keeps track of even numbers
+stats_odd = NumberStats()  # Keeps track of odd numbers
+
+print("Please type in integer numbers:")
+
+while True:
+    # Ask the user for an integer input
+    try:
+        user_input = int(input())  # Convert input to integer
+    except ValueError:
+        print("Please enter a valid integer.")
+        continue  # Skip the rest of the loop and ask for input again
+
+    if user_input == -1:
+        break  # Exit the loop if the user enters -1
+    
+    # Add the number to the stats_all object
+    stats_all.add_number(user_input)
+    
+    # If the number is even, add to the stats_even object
+    if user_input % 2 == 0:
+        stats_even.add_number(user_input)
+    else:
+        # If the number is odd, add to the stats_odd object
+        stats_odd.add_number(user_input)
+
+# After the loop ends, print the sum and mean of the numbers
+print("Sum of numbers:", stats_all.get_sum())
+print("Mean of numbers:", stats_all.average())
+print("Sum of even numbers:", stats_even.get_sum())
+print("Sum of odd numbers:", stats_odd.get_sum())
