@@ -1,0 +1,24 @@
+class Stopwatch:
+    def __init__(self):
+        self.seconds = 0  # Seconds counter
+        self.minutes = 0  # Minutes counter
+
+    def tick(self):
+        """Increment the stopwatch by 1 second."""
+        self.seconds += 1
+        if self.seconds == 60:  # When seconds reach 60, reset to 0 and increment minutes
+            self.seconds = 0
+            self.minutes += 1
+        if self.minutes == 60:  # When minutes reach 60, reset to 0
+            self.minutes = 0
+
+    def __str__(self):
+        """Return a string representation of the stopwatch in MM:SS format."""
+        # Format the time with leading zeros if necessary (two digits for minutes and seconds)
+        return f"{self.minutes:02}:{self.seconds:02}"
+
+# Example of how to use the class:
+watch = Stopwatch()
+for i in range(3600):  # Loop through 3600 iterations (1 hour)
+    print(watch)
+    watch.tick()
