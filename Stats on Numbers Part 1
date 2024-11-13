@@ -1,0 +1,22 @@
+class NumberStats:
+    def __init__(self):
+        # Initialize the count of numbers to 0
+        self.numbers = 0
+
+    def add_number(self, number: int):
+        # Increase the count of numbers by 1 whenever a new number is added
+        self.numbers += 1
+
+    def count_numbers(self):
+        # Return the total count of numbers added
+        return self.numbers
+
+# Example usage
+stats = NumberStats()
+stats.add_number(3)
+stats.add_number(5)
+stats.add_number(1)
+stats.add_number(2)
+
+# Print the count of numbers added
+print("Numbers added:", stats.count_numbers())
