@@ -1,0 +1,15 @@
+from datetime import date
+
+def list_years(dates: list):
+    return sorted([d.year for d in dates])
+
+# Create a list of date objects
+dates = [
+    date(2022, 5, 10),
+    date(1996, 8, 15),
+    date(2010, 3, 21),
+    date(2005, 12, 30)
+]
+
+# Call the function and print the result
+print(list_years(dates))
