@@ -1,0 +1,25 @@
+class ShoppingList:
+    def __init__(self):
+        # Initialize an empty dictionary to store items and quantities
+        self.items = {}
+
+    def add(self, item: str, quantity: int):
+        # Add the item and its quantity to the list
+        if item in self.items:
+            self.items[item] += quantity  # Add to existing quantity if item already in list
+        else:
+            self.items[item] = quantity  # Otherwise, set the quantity for the new item
+
+def total_units(my_list: ShoppingList) -> int:
+    # Sum up all the quantities in the shopping list
+    return sum(my_list.items.values())
+
+# Example usage:
+if __name__ == "__main__":
+    my_list = ShoppingList()
+    my_list.add("bananas", 10)
+    my_list.add("apples", 5)
+    my_list.add("pineapple", 1)
+
+    # Call total_units function and print the result
+    print(total_units(my_list))
