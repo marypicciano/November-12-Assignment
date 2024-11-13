@@ -1,0 +1,15 @@
+class Series:
+    def __init__(self, title, seasons, genres):
+        """Initialize the series with the title, number of seasons, and genres."""
+        self.title = title
+        self.seasons = seasons
+        self.genres = genres
+
+    def __str__(self):
+        """Return a string representation of the series."""
+        genre_string = ", ".join(self.genres)  # Join genres with a comma and a space
+        return f"{self.title} ({self.seasons} seasons)\ngenres: {genre_string}\nno ratings"
+
+# Usage example:
+dexter = Series("Dexter", 8, ["Crime", "Drama", "Mystery", "Thriller"])
+print(dexter)
