@@ -1,0 +1,34 @@
+# Class Checklist
+class Checklist:
+    def __init__(self, header: str, entries: list):
+        # Initialize the attributes with the given values
+        self.header = header
+        self.entries = entries
+
+# Class Customer
+class Customer:
+    def __init__(self, id: str, balance: float, discount: int):
+        # Initialize the attributes with the given values
+        self.id = id
+        self.balance = balance
+        self.discount = discount
+
+
+# Class Cable
+class Cable:
+    def __init__(self, model: str, length: float, max_speed: int, bidirectional: bool):
+        # Initialize the attributes with the given values
+        self.model = model
+        self.length = length
+        self.max_speed = max_speed
+        self.bidirectional = bidirectional
+
+#Example
+        
+checklist1 = Checklist("Shopping List", ["Milk", "Eggs", "Bread", "Butter"])
+customer1 = Customer("C789", 1000.00, 5) 
+cable1 = Cable("SpeedX Ultra", 20.0, 5000, True)
+
+print(f"Checklist: {checklist1.header}, Entries: {checklist1.entries}")
+print(f"Customer ID: {customer1.id}, Balance: {customer1.balance}, Discount: {customer1.discount}%")
+print(f"Cable Model: {cable1.model}, Length: {cable1.length}m, Max Speed: {cable1.max_speed} Mbps, Bidirectional: {cable1.bidirectional}")
